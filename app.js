@@ -6,35 +6,35 @@ const success = document.getElementById('success');
 form?.addEventListener('submit', (e) => {
     // Prevent default form submission
     e.preventDefault();
-    
+
     // Get form data
     const formData = new FormData(form);
     const email = formData.get('email');
-    
+
     // Show loading state
     const button = form.querySelector('button');
     const originalText = button.textContent;
     button.textContent = 'Submitting...';
     button.disabled = true;
-    
+
     // Submit to Netlify Forms
     fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams(formData).toString()
     })
-    .then(() => {
-        // Show success message
-        success.hidden = false;
-        form.hidden = true;
-    })
-    .catch((error) => {
-        console.error('Error:', error);
-        // Reset button
-        button.textContent = originalText;
-        button.disabled = false;
-        // You could show an error message here
-    });
+        .then(() => {
+            // Show success message
+            success.hidden = false;
+            form.hidden = true;
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+            // Reset button
+            button.textContent = originalText;
+            button.disabled = false;
+            // You could show an error message here
+        });
 });
 
 // Add scroll-triggered animations
