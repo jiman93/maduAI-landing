@@ -22,13 +22,19 @@
     <body>
         <a class="skip" href="#main">Skip to content</a>
 
+        <!-- Hidden form for Netlify Forms detection -->
+        <form name="early-access" netlify netlify-honeypot="bot-field" hidden>
+            <input type="email" name="email" />
+            <input name="bot-field" />
+        </form>
+
         <main id="main" class="hero">
             <div class="hero-content">
                 <div class="logo">MaduAI</div>
                 <h1>GenAI Solutions for Real Impact</h1>
                 <p class="sub">Custom AI workflows to automate tasks, boost productivity, and cut costs.</p>
 
-                <form name="early-access" method="POST" data-netlify="true" class="form" netlify-honeypot="bot-field">
+                <form name="early-access" method="POST" action="/" data-netlify="true" class="form" netlify-honeypot="bot-field">
                     <input type="hidden" name="form-name" value="early-access" />
                     <p class="hidden">
                         <label>Don't fill this out: <input name="bot-field" /></label>
