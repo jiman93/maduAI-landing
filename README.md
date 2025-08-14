@@ -1,74 +1,163 @@
-# Content Ops Starter
+# MaduAI Landing Page
 
-![Content Ops Starter](https://assets.stackbit.com/docs/content-ops-starter-thumb.png)
+**GenAI Solutions for Real Impact**
 
-Netlify starter that's made for customization with a flexible content model, component library, [visual editing](https://docs.netlify.com/visual-editor/overview/) and [Git Content Source](https://docs.netlify.com/create/content-sources/git/).
+A modern, animated landing page for MaduAI - custom AI workflows to automate tasks, boost productivity, and cut costs.
 
-**⚡ View demo:** [https://content-ops-starter.netlify.app/](https://content-ops-starter.netlify.app/)
+## Features
 
-## Table of Contents
+- 🍯 Honey-themed design with warm colors and smooth animations
+- 📱 Fully responsive (mobile, tablet, desktop)
+- ⚡ Fast loading (< 1s on 4G)
+- 📧 Email capture with Netlify Forms
+- ♿ Accessibility compliant
+- 🔍 SEO optimized
+- ✨ Smooth animations and micro-interactions
 
-- [Deploying to Netlify](#deploying-to-netlify)
-- [Develop with Netlify Visual Editor Locally](#develop-with-netlify-visual-editor-locally)
-- [Building for production](#building-for-production)
-- [Setting Up Algolia Search](#setting-up-algolia-search)
-- [Next Steps](#next-steps)
-- [Support](#support)
+## Tech Stack
 
-## Deploying to Netlify
+- Pure HTML/CSS/JavaScript
+- Netlify Forms for email capture
+- Inter font family
+- CSS animations and transitions
+- No frameworks or build tools
 
-If you click "Deploy to Netlify" button, it will create a new repo for you that looks exactly like this one, and sets that repo up immediately for deployment on Netlify.
+## Local Development
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify-templates/content-ops-starter)
-
-## Develop with Netlify Visual Editor Locally
-
-The typical development process is to begin by working locally. Clone this repository, then run `npm install` in its root directory.
-
-Run the Next.js development server:
-
-```txt
-cd content-ops-starter
+```bash
+# Start local server
 npm run dev
+
+# Or use Python
+python3 -m http.server 8000
 ```
 
-Install the [Netlify Visual Editor CLI](https://www.npmjs.com/package/@stackbit/cli). Then open a new terminal window in the same project directory and run the Netlify visual editor dev server:
+Then visit `http://localhost:8000`
 
-```txt
-npm install -g @stackbit/cli
-stackbit dev
+## Deployment
+
+### Netlify (Recommended)
+
+1. **Drag & Drop**: Simply drag the project folder to [Netlify Drop](https://app.netlify.com/drop)
+2. **Git Integration**: Connect your GitHub repo to Netlify for automatic deployments
+
+### DNS Setup
+
+1. Add your domain in Netlify dashboard
+2. Set up DNS records:
+   - `CNAME` root → `apex-loadbalancer.netlify.com`
+   - `CNAME` www → `your-site.netlify.app`
+3. Wait for SSL certificate (usually 24-48 hours)
+
+## File Structure
+
+```
+/
+├── index.html          # Main landing page
+├── privacy.html        # Privacy policy
+├── styles.css          # All styles and animations
+├── app.js             # JavaScript functionality
+├── robots.txt         # SEO
+├── sitemap.xml        # SEO
+└── public/
+    ├── images/
+    │   └── og.png     # Open Graph image (1200x630)
+    └── icons/
+        └── favicon.ico # Favicon
 ```
 
-This outputs your own Netlify visual editor URL. Open this, register, or sign in, and you will be directed to Netlify's visual editor for your new project.
+## Design System
 
-![Next.js Dev + Visual Editor Dev](https://assets.stackbit.com/docs/next-dev-stackbit-dev.png)
+### Colors
 
-## Building for production
+- **Honey (Primary)**: `#FFB703`
+- **Honey Deep**: `#F59F00`
+- **Amber Glow**: `#FCBF49`
+- **Ink (Text)**: `#1F2937`
+- **Cream (Background)**: `#FFF8F0`
+- **White**: `#FFFFFF`
 
-To build a static site for production, run the following command
+### Typography
 
-```shell
-npm run build
-```
+- **Font**: Inter (system fallbacks)
+- **H1**: 48-64px / 800 weight
+- **H2**: 22-28px / 500 weight
+- **Body**: 16-18px / 400 weight
+- **Button**: 16px / 700 weight
 
-## Setting Up Algolia Search
+## Animations & Interactions
 
-This starter includes Algolia search integration. To set it up:
+### Entrance Animations
 
-1. Create an [Algolia](https://www.algolia.com/) account
-2. Create a new application and index
-3. Set the following environment variables:
-   - `NEXT_PUBLIC_ALGOLIA_APP_ID` - Your Algolia application ID
-   - `NEXT_PUBLIC_ALGOLIA_SEARCH_API_KEY` - Your Algolia search-only API key
-   - `NEXT_PUBLIC_ALGOLIA_INDEX_NAME` - Your index name
+- Staggered element entrance with delays
+- Slide-in effects for headings
+- Fade-in animations for content
+- Bounce-in success message
 
-## Next Steps
+### Interactive Elements
 
-Here are a few suggestions on what to do next if you're new to Netlify visual editor:
+- Logo glow effect with pulsing animation
+- Button hover effects with scale and shimmer
+- Ripple effect on button clicks
+- Form input focus with scale and glow
+- Trust badge hover with lift and shimmer
 
-- Learn [Netlify visual editor overview](https://docs.netlify.com/visual-editor/visual-editing/)
-- Check [Netlify visual editor reference documentation](https://visual-editor-reference.netlify.com/)
+### Background Effects
 
-## Support
+- Animated gradient shift
+- Floating particle pattern
+- Smooth color transitions
 
-If you get stuck along the way, get help in our [support forums](https://answers.netlify.com/).
+### Micro-interactions
+
+- Typing effect for main heading
+- Floating trust badges
+- Animated footer links
+- Smooth transitions throughout
+
+## Performance
+
+- Target: < 60KB total
+- Lighthouse score: 95+
+- Loads in < 1s on 4G
+- No external dependencies except Google Fonts
+- Optimized animations with CSS transforms
+
+## Accessibility
+
+- Color contrast ≥ 4.5:1 for text
+- Button contrast ≥ 3:1
+- Visible focus states
+- Skip-to-content link
+- Respects `prefers-reduced-motion`
+- Screen reader friendly
+
+## Business Focus
+
+The landing page is designed for business decision-makers with:
+
+- **Clear value propositions**:
+
+  - Automate repetitive processes
+  - Generate insights from your data
+  - Deploy fast with measurable ROI
+
+- **Professional messaging** emphasizing:
+  - Real business impact
+  - Measurable outcomes
+  - Fast deployment
+  - Cost reduction
+
+## Next Steps (v1.1)
+
+- [ ] Add contact page with Netlify form
+- [ ] Design and add OG image
+- [ ] Add analytics (Plausible/Umami)
+- [ ] Add "Founding Member" referral codes
+- [ ] Create favicon and brand assets
+- [ ] Add more interactive animations
+- [ ] Implement A/B testing for CTAs
+
+## License
+
+MIT License - feel free to use this as a starting point for your own projects.
