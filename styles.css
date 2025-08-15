@@ -2,15 +2,15 @@
     --honey: #ffb703;
     --honey-deep: #f59f00;
     --amber: #fcbf49;
-    --ink: #1f2937;
-    --cream: #fff8f0;
-    --white: #fff;
-    --gray-light: #f3f4f6;
+    --ink: #ffffff;
+    --cream: #1a1a1a;
+    --white: #000000;
+    --gray-light: #2a2a2a;
     --gray-medium: #9ca3af;
-    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.3);
 }
 
 * {
@@ -20,12 +20,24 @@
 body {
     margin: 0;
     font-family: Inter, system-ui, Segoe UI, Roboto, Arial, sans-serif;
-    background: var(--white);
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 25%, #1f1f1f 50%, #2d2d2d 75%, #1a1a1a 100%);
+    background-size: 400% 400%;
     color: var(--ink);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
+    animation: backgroundShift 12s ease-in-out infinite;
+}
+
+@keyframes backgroundShift {
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
 }
 
 .skip {
@@ -37,7 +49,7 @@ body {
 .skip:focus {
     left: 16px;
     top: 16px;
-    background: var(--white);
+    background: var(--gray-light);
     padding: 12px 16px;
     border-radius: 8px;
     box-shadow: var(--shadow-lg);
@@ -53,9 +65,9 @@ body {
     align-items: center;
     text-align: center;
     padding: 80px 24px;
-    background: linear-gradient(135deg, var(--honey) 0%, var(--amber) 25%, var(--honey-deep) 50%, var(--honey) 75%, var(--amber) 100%);
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 25%, #1f1f1f 50%, #2d2d2d 75%, #1a1a1a 100%);
     background-size: 400% 400%;
-    color: var(--white);
+    color: var(--ink);
     position: relative;
     overflow: hidden;
     animation: gradientShift 8s ease-in-out infinite;
@@ -68,7 +80,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Ccircle cx='50' cy='50' r='3'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffb703' fill-opacity='0.05'%3E%3Ccircle cx='50' cy='50' r='3'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     animation: float 20s ease-in-out infinite;
 }
 
@@ -102,6 +114,9 @@ body {
     .hero::before {
         animation: none;
     }
+    body {
+        animation: none;
+    }
 }
 
 .hero-content {
@@ -127,18 +142,18 @@ body {
     font-weight: 800;
     letter-spacing: -0.5px;
     font-size: 2rem;
-    color: var(--white);
+    color: var(--honey);
     margin-bottom: 32px;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     animation: logoGlow 3s ease-in-out infinite alternate;
 }
 
 @keyframes logoGlow {
     from {
-        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     }
     to {
-        text-shadow: 0 2px 20px rgba(255, 255, 255, 0.3);
+        text-shadow: 0 2px 20px rgba(255, 183, 3, 0.4);
     }
 }
 
@@ -148,7 +163,7 @@ body {
     margin: 0 0 24px;
     line-height: 1.1;
     letter-spacing: -0.02em;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     animation: slideInLeft 1s ease-out 0.2s both;
 }
 
@@ -204,17 +219,18 @@ body {
     border: 2px solid transparent;
     font-size: 1rem;
     font-weight: 500;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     box-shadow: var(--shadow-lg);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     transform: translateY(0);
+    color: var(--ink);
 }
 
 .form input:focus {
     outline: none;
-    border-color: var(--white);
-    box-shadow: var(--shadow-xl), 0 0 0 4px rgba(255, 255, 255, 0.2);
+    border-color: var(--honey);
+    box-shadow: var(--shadow-xl), 0 0 0 4px rgba(255, 183, 3, 0.2);
     transform: translateY(-2px) scale(1.02);
 }
 
@@ -234,8 +250,8 @@ body {
     font-size: 1rem;
     font-weight: 700;
     cursor: pointer;
-    background: var(--white);
-    color: var(--honey-deep);
+    background: var(--honey);
+    color: var(--white);
     box-shadow: var(--shadow-lg);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     white-space: nowrap;
@@ -251,7 +267,7 @@ body {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
     transition: left 0.6s ease;
 }
 
@@ -262,7 +278,7 @@ body {
     left: 50%;
     width: 0;
     height: 0;
-    background: rgba(255, 183, 3, 0.1);
+    background: rgba(255, 183, 3, 0.3);
     border-radius: 50%;
     transform: translate(-50%, -50%);
     transition: width 0.3s ease, height 0.3s ease;
@@ -271,6 +287,7 @@ body {
 .form button:hover {
     transform: translateY(-3px) scale(1.05);
     box-shadow: var(--shadow-xl);
+    background: var(--honey-deep);
 }
 
 .form button:hover::before {
@@ -324,13 +341,14 @@ body {
     font-size: 1.5rem;
     font-weight: 700;
     padding: 24px 32px;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 183, 3, 0.1);
     backdrop-filter: blur(10px);
     border-radius: 16px;
     box-shadow: var(--shadow-lg);
-    color: var(--honey-deep);
+    color: var(--honey);
     margin-bottom: 48px;
     animation: bounceIn 0.6s ease-out;
+    border: 1px solid rgba(255, 183, 3, 0.2);
 }
 
 @keyframes bounceIn {
@@ -364,17 +382,18 @@ body {
 }
 
 .trust li {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 183, 3, 0.1);
     backdrop-filter: blur(10px);
     padding: 12px 20px;
     border-radius: 50px;
     font-weight: 600;
     font-size: 0.875rem;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 183, 3, 0.2);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
     cursor: pointer;
+    color: var(--ink);
 }
 
 .trust li::before {
@@ -384,14 +403,15 @@ body {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 183, 3, 0.2), transparent);
     transition: left 0.5s ease;
 }
 
 .trust li:hover {
-    background: rgba(255, 255, 255, 0.25);
+    background: rgba(255, 183, 3, 0.2);
     transform: translateY(-3px) scale(1.05);
     box-shadow: var(--shadow-md);
+    border-color: var(--honey);
 }
 
 .trust li:hover::before {
@@ -422,14 +442,14 @@ body {
 .footer {
     padding: 48px 24px;
     text-align: center;
-    background: var(--white);
+    background: var(--gray-light);
     color: var(--gray-medium);
-    border-top: 1px solid var(--gray-light);
+    border-top: 1px solid rgba(255, 183, 3, 0.1);
     animation: fadeIn 1s ease-out 1.8s both;
 }
 
 .footer a {
-    color: var(--honey-deep);
+    color: var(--honey);
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s ease;
@@ -448,7 +468,7 @@ body {
 }
 
 .footer a:hover {
-    color: var(--honey);
+    color: var(--honey-deep);
 }
 
 .footer a:hover::after {
